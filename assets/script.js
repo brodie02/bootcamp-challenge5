@@ -129,3 +129,24 @@ $(function hourColoumnColour() {
         inputEl.addClass("past")
     }
 })
+
+// Saves the task input
+$(".saveBtn").on("click", function(event) {
+    event.preventDefault()
+
+    var value = $(this).siblings(".task-input").val();
+    var time = $(this).parent().attr("id").split("-")[1];
+    localStorage.setItem(time, value);
+})
+
+$(function displayTasks() {
+    $("#hour-09 .task-input").val(localStorage.getItem("09"));
+    $("#hour-10 .task-input").val(localStorage.getItem("10"));
+    $("#hour-11 .task-input").val(localStorage.getItem("11"));
+    $("#hour-12 .task-input").val(localStorage.getItem("12"));
+    $("#hour-13 .task-input").val(localStorage.getItem("13"));
+    $("#hour-14 .task-input").val(localStorage.getItem("14"));
+    $("#hour-15 .task-input").val(localStorage.getItem("15"));
+    $("#hour-16 .task-input").val(localStorage.getItem("16"));
+    $("#hour-17 .task-input").val(localStorage.getItem("17"));
+})
