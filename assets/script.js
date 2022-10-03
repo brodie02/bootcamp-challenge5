@@ -139,6 +139,7 @@ $(".saveBtn").on("click", function(event) {
     localStorage.setItem(time, value);
 })
 
+// Displays the saved tasks
 $(function displayTasks() {
     $("#hour-09 .task-input").val(localStorage.getItem("09"));
     $("#hour-10 .task-input").val(localStorage.getItem("10"));
@@ -149,4 +150,10 @@ $(function displayTasks() {
     $("#hour-15 .task-input").val(localStorage.getItem("15"));
     $("#hour-16 .task-input").val(localStorage.getItem("16"));
     $("#hour-17 .task-input").val(localStorage.getItem("17"));
+})
+
+// Clears all the tasks
+$("#clear-btn").on("click", function(event) {
+    localStorage.clear()
+    location.reload()
 })
